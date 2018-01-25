@@ -48,7 +48,7 @@ namespace Super_Shop_Management.Admin
                 while (dataReader.Read())
                 {
                     List<String> arr = new List<string>();
-
+                    
                     for (int i = 0; i < 3; i++)
                     {
                         arr.Add(dataReader[columns[i]].ToString());
