@@ -123,8 +123,8 @@ namespace Super_Shop_Management
             db = new Database.DatabaseHandler();
             db.openConnection();
 
-            query = "INSERT INTO customer(C_Name,Email,M_ID) VALUES('" + customer_Fname.Text + "','" + customer_Email.Text + "'," + num + ")";
-
+            //query = "INSERT INTO customer(C_Name,Email,M_ID) VALUES('" + customer_Fname.Text + "','" + customer_Email.Text + "'," + num + ")";
+            
             try
             {
                 MySqlCommand cmd = new MySqlCommand(query, db.getmyConn());
