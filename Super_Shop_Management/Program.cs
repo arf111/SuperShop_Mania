@@ -17,7 +17,7 @@ namespace Super_Shop_Management
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Login.Splash_Screen());
-            Application.Run(new Manage_Product());
+            Application.Run(new Top_Selling());
         }
     }
 }
