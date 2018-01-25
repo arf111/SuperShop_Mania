@@ -132,12 +132,16 @@
             // 
             // ok_bttn
             // 
-            this.ok_bttn.Location = new System.Drawing.Point(339, 81);
+            this.ok_bttn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
+            this.ok_bttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ok_bttn.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ok_bttn.ForeColor = System.Drawing.Color.White;
+            this.ok_bttn.Location = new System.Drawing.Point(340, 73);
             this.ok_bttn.Name = "ok_bttn";
             this.ok_bttn.Size = new System.Drawing.Size(99, 43);
             this.ok_bttn.TabIndex = 20;
             this.ok_bttn.Text = "OK";
-            this.ok_bttn.UseVisualStyleBackColor = true;
+            this.ok_bttn.UseVisualStyleBackColor = false;
             this.ok_bttn.Click += new System.EventHandler(this.ok_bttn_Click);
             // 
             // Sales_Report
@@ -152,6 +156,7 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.salesReportView);
             this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Sales_Report";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
