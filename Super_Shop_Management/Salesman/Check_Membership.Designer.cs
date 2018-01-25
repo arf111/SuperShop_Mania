@@ -50,13 +50,14 @@
             this.id_search_bttn.TabIndex = 5;
             this.id_search_bttn.Text = "OK";
             this.id_search_bttn.UseVisualStyleBackColor = false;
+            this.id_search_bttn.Click += new System.EventHandler(this.id_search_bttn_Click);
             // 
             // c_id_value
             // 
             this.c_id_value.Location = new System.Drawing.Point(136, 82);
             this.c_id_value.Margin = new System.Windows.Forms.Padding(4);
             this.c_id_value.Name = "c_id_value";
-            this.c_id_value.Size = new System.Drawing.Size(167, 25);
+            this.c_id_value.Size = new System.Drawing.Size(167, 34);
             this.c_id_value.TabIndex = 4;
             // 
             // label1
@@ -66,7 +67,7 @@
             this.label1.Location = new System.Drawing.Point(35, 85);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 18);
+            this.label1.Size = new System.Drawing.Size(133, 28);
             this.label1.TabIndex = 3;
             this.label1.Text = "Customer ID :";
             // 
@@ -78,7 +79,7 @@
             this.label2.Location = new System.Drawing.Point(92, 27);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(166, 25);
+            this.label2.Size = new System.Drawing.Size(245, 39);
             this.label2.TabIndex = 6;
             this.label2.Text = "Check Membership";
             // 
@@ -104,7 +105,7 @@
             // 
             // Check_Membership
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(340, 222);
