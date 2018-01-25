@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Super_Shop_Management
 {
     public partial class Manage_Customer : Form
@@ -18,11 +19,46 @@ namespace Super_Shop_Management
         private String query;
         private int num;
         private int id;
+        private String email;
         //private MySqlConnection connection = new MySqlConnection(connectionString);
         public Manage_Customer()
         {
             InitializeComponent();
         }
+
+
+        private void view_customer_details()
+        {
+            db = new Database.DatabaseHandler();
+
+            db.openConnection();
+
+            //query = "SELECT * FROM customer";
+            query = "SELECT c.C_Name, c.Email, m.Type from customer as c inner join membership as m on c.M_ID = m.M_ID";
+
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(query, db.getmyConn());
+
+                MySqlDataAdapter myAdapter = new MySqlDataAdapter();
+
+                myAdapter.SelectCommand = cmd;
+
+                DataTable dt = new DataTable();
+
+                myAdapter.Fill(dt);
+
+                customerGridView.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            db.closeConnection();
+        }
+
 
         private void customer_Insert_Click(object sender, EventArgs e)
         {
@@ -49,6 +85,8 @@ namespace Super_Shop_Management
                 MySqlCommand cmd = new MySqlCommand(query, db.getmyConn());
                 cmd.ExecuteNonQuery();
 
+                view_customer_details();
+                
             }
             catch (Exception ev)
             {
@@ -59,35 +97,10 @@ namespace Super_Shop_Management
 
         }
 
+        
         private void customer_View_Click(object sender, EventArgs e)
         {
-            db = new Database.DatabaseHandler();
-
-            db.openConnection();
-
-            query = "SELECT * FROM customer";
-
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand(query, db.getmyConn());
-
-                MySqlDataAdapter myAdapter = new MySqlDataAdapter();
-
-                myAdapter.SelectCommand = cmd;
-
-                DataTable dt = new DataTable();
-
-                myAdapter.Fill(dt);
-
-                customerGridView.DataSource = dt;
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-
-            db.closeConnection();
+            view_customer_details();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -124,6 +137,8 @@ namespace Super_Shop_Management
             {
                 MySqlCommand cmd = new MySqlCommand(query, db.getmyConn());
                 cmd.ExecuteNonQuery();
+
+                view_customer_details();
             }
             catch (Exception ev)
             {
@@ -134,8 +149,7 @@ namespace Super_Shop_Management
 
         private void customerGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            id = Convert.ToInt32(
-                customerGridView.SelectedRows[0].Cells[0].Value.ToString());
+           
         }
 
         private void customer_Delete_Click(object sender, EventArgs e)
@@ -143,11 +157,15 @@ namespace Super_Shop_Management
             db = new Database.DatabaseHandler();
             db.openConnection();
 
-            query = "DELETE FROM customer WHERE C_ID=" + id;
+            query = "DELETE FROM customer WHERE Email ='" + email + "'";
+            //MessageBox.Show(email);
+
             try
             {
                 MySqlCommand cmd = new MySqlCommand(query, db.getmyConn());
                 cmd.ExecuteNonQuery();
+
+                view_customer_details();
             }
             catch (Exception ev)
             {
@@ -160,6 +178,11 @@ namespace Super_Shop_Management
         {
             this.Close();
             new Admin_View().Show();
+        }
+
+        private void customerGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            email = customerGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
     }
 
