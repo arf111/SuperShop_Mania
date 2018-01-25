@@ -15,7 +15,7 @@ namespace Super_Shop_Management.Admin
     {
         private Database.DatabaseHandler db;
         private String query;
-        private String prod_name, branch_id, prod_quantity;
+        private String prod_name, branch_Name, prod_quantity;
 
         private void ok_bttn_Click(object sender, EventArgs e)
         {
@@ -27,11 +27,10 @@ namespace Super_Shop_Management.Admin
             db.openConnection();
 
             prod_name = product_name.Text;
-            branch_id = branch_name.Text;
+            branch_Name = branch_name.Text;
             prod_quantity = product_quantity.Text;
 
-            query = "INSERT INTO stores_in(P_ID, P_Quantity, Branch_ID) " +
-            "VALUES((SELECT p.P_ID FROM product as p WHERE p.P_Name = '" + prod_name + "'),'" + prod_quantity + "','" + branch_id + "')";
+            query = "insert into stores_in(P_ID,P_Quantity,Branch_ID) values((select p.P_ID from product as p where p.P_Name='"+prod_name+"'),"+prod_quantity+",(select b.Branch_ID from branch as b where location = '"+branch_Name+"'))";
 
             try
             {
@@ -40,6 +39,7 @@ namespace Super_Shop_Management.Admin
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Inserted");
+                view();
 
             }
             catch (Exception ex)
@@ -54,12 +54,71 @@ namespace Super_Shop_Management.Admin
             new Admin_View().Show();
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void update_bttn_Click(object sender, EventArgs e)
+        {
+            db.openConnection();
+
+            prod_name = product_name.Text;
+            branch_Name = branch_name.Text;
+            prod_quantity = product_quantity.Text;
+
+            query = "UPDATE stores_in SET P_Quantity = "+prod_quantity+" WHERE Branch_ID = (Select Branch_ID from branch where location = '"+branch_Name+"')";
+
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(query, db.getmyConn());
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Updated");
+                view();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+        private void view()
+        {
+            db.openConnection();
+
+            query = "SELECT p.P_Name as 'Product Name',st.P_Quantity as 'Product Quantity',b.Location as 'Branch' FROM stores_in as st INNER JOIN product AS p ON st.P_ID = p.P_ID INNER JOIN branch as b ON st.Branch_ID = b.Branch_ID";
+
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(query, db.getmyConn());
+
+                MySqlDataAdapter myAdapter = new MySqlDataAdapter();
+
+                myAdapter.SelectCommand = cmd;
+
+                DataTable dt = new DataTable();
+
+                myAdapter.Fill(dt);
+
+                sales_distributeView.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            db.closeConnection();
+        }
+
         private void view_bttn_Click(object sender, EventArgs e)
         {
             db.openConnection();
 
-            query = "SELECT p.P_Name as 'Product Name',st.P_Quantity as 'Product Quantity',st.Branch_ID as 'Branch' FROM stores_in as st " +
-            "INNER JOIN product AS p ON st.P_ID = p.P_ID";
+            query = "SELECT p.P_Name as 'Product Name',st.P_Quantity as 'Product Quantity',b.Location as 'Branch' FROM stores_in as st INNER JOIN product AS p ON st.P_ID = p.P_ID INNER JOIN branch as b ON st.Branch_ID = b.Branch_ID";
 
             try
             {

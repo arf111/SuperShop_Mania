@@ -30,9 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Warehouse_Distribution));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.insert_bttn = new System.Windows.Forms.Button();
             this.update_bttn = new System.Windows.Forms.Button();
             this.view_bttn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,13 +44,11 @@
             this.product_quantity = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.product_name = new System.Windows.Forms.TextBox();
-            this.insert_bttn = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sales_distributeView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -62,6 +62,16 @@
             this.panel2.Size = new System.Drawing.Size(691, 56);
             this.panel2.TabIndex = 29;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(630, 21);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -70,6 +80,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(16, 16);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -95,18 +106,33 @@
             this.panel1.Size = new System.Drawing.Size(163, 455);
             this.panel1.TabIndex = 21;
             // 
+            // insert_bttn
+            // 
+            this.insert_bttn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(219)))));
+            this.insert_bttn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.insert_bttn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.insert_bttn.ForeColor = System.Drawing.Color.White;
+            this.insert_bttn.Location = new System.Drawing.Point(21, 68);
+            this.insert_bttn.Name = "insert_bttn";
+            this.insert_bttn.Size = new System.Drawing.Size(131, 41);
+            this.insert_bttn.TabIndex = 22;
+            this.insert_bttn.Text = "Insert";
+            this.insert_bttn.UseVisualStyleBackColor = false;
+            this.insert_bttn.Click += new System.EventHandler(this.insert_bttn_Click);
+            // 
             // update_bttn
             // 
             this.update_bttn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(219)))));
             this.update_bttn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.update_bttn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.update_bttn.ForeColor = System.Drawing.Color.White;
-            this.update_bttn.Location = new System.Drawing.Point(15, 129);
+            this.update_bttn.Location = new System.Drawing.Point(21, 128);
             this.update_bttn.Name = "update_bttn";
             this.update_bttn.Size = new System.Drawing.Size(131, 41);
             this.update_bttn.TabIndex = 21;
             this.update_bttn.Text = "Update";
             this.update_bttn.UseVisualStyleBackColor = false;
+            this.update_bttn.Click += new System.EventHandler(this.update_bttn_Click);
             // 
             // view_bttn
             // 
@@ -114,7 +140,7 @@
             this.view_bttn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.view_bttn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.view_bttn.ForeColor = System.Drawing.Color.White;
-            this.view_bttn.Location = new System.Drawing.Point(15, 361);
+            this.view_bttn.Location = new System.Drawing.Point(21, 361);
             this.view_bttn.Name = "view_bttn";
             this.view_bttn.Size = new System.Drawing.Size(131, 41);
             this.view_bttn.TabIndex = 20;
@@ -126,15 +152,15 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(179, 118);
+            this.label4.Location = new System.Drawing.Point(164, 118);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 18);
+            this.label4.Size = new System.Drawing.Size(95, 18);
             this.label4.TabIndex = 28;
-            this.label4.Text = "Branch ID :";
+            this.label4.Text = "Branch Name :";
             // 
             // branch_name
             // 
-            this.branch_name.Location = new System.Drawing.Point(266, 111);
+            this.branch_name.Location = new System.Drawing.Point(266, 116);
             this.branch_name.Name = "branch_name";
             this.branch_name.Size = new System.Drawing.Size(141, 20);
             this.branch_name.TabIndex = 27;
@@ -181,30 +207,6 @@
             this.product_name.Size = new System.Drawing.Size(141, 20);
             this.product_name.TabIndex = 22;
             // 
-            // insert_bttn
-            // 
-            this.insert_bttn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(219)))));
-            this.insert_bttn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.insert_bttn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.insert_bttn.ForeColor = System.Drawing.Color.White;
-            this.insert_bttn.Location = new System.Drawing.Point(15, 68);
-            this.insert_bttn.Name = "insert_bttn";
-            this.insert_bttn.Size = new System.Drawing.Size(131, 41);
-            this.insert_bttn.TabIndex = 22;
-            this.insert_bttn.Text = "Insert";
-            this.insert_bttn.UseVisualStyleBackColor = false;
-            this.insert_bttn.Click += new System.EventHandler(this.insert_bttn_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(630, 21);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
             // Warehouse_Distribution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,10 +227,10 @@
             this.Text = "Warehouse_Distribution";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sales_distributeView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

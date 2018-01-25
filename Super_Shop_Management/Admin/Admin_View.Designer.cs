@@ -48,7 +48,7 @@
             this.top_selling_bttn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.top_selling_bttn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.top_selling_bttn.ForeColor = System.Drawing.Color.White;
-            this.top_selling_bttn.Location = new System.Drawing.Point(29, 192);
+            this.top_selling_bttn.Location = new System.Drawing.Point(29, 154);
             this.top_selling_bttn.Name = "top_selling_bttn";
             this.top_selling_bttn.Size = new System.Drawing.Size(203, 31);
             this.top_selling_bttn.TabIndex = 7;
@@ -62,7 +62,7 @@
             this.manage_customer_bttn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.manage_customer_bttn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manage_customer_bttn.ForeColor = System.Drawing.Color.White;
-            this.manage_customer_bttn.Location = new System.Drawing.Point(29, 144);
+            this.manage_customer_bttn.Location = new System.Drawing.Point(29, 95);
             this.manage_customer_bttn.Name = "manage_customer_bttn";
             this.manage_customer_bttn.Size = new System.Drawing.Size(203, 35);
             this.manage_customer_bttn.TabIndex = 6;
@@ -94,7 +94,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe Script", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(25, 25);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(276, 349);
+            this.groupBox1.Size = new System.Drawing.Size(276, 326);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Admin";
@@ -105,7 +105,7 @@
             this.sales_report_bttn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.sales_report_bttn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sales_report_bttn.ForeColor = System.Drawing.Color.White;
-            this.sales_report_bttn.Location = new System.Drawing.Point(29, 295);
+            this.sales_report_bttn.Location = new System.Drawing.Point(29, 267);
             this.sales_report_bttn.Name = "sales_report_bttn";
             this.sales_report_bttn.Size = new System.Drawing.Size(203, 36);
             this.sales_report_bttn.TabIndex = 10;
@@ -119,7 +119,7 @@
             this.warehouse_dis_bttn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.warehouse_dis_bttn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.warehouse_dis_bttn.ForeColor = System.Drawing.Color.White;
-            this.warehouse_dis_bttn.Location = new System.Drawing.Point(29, 241);
+            this.warehouse_dis_bttn.Location = new System.Drawing.Point(29, 211);
             this.warehouse_dis_bttn.Name = "warehouse_dis_bttn";
             this.warehouse_dis_bttn.Size = new System.Drawing.Size(203, 36);
             this.warehouse_dis_bttn.TabIndex = 9;
@@ -152,7 +152,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(332, 399);
+            this.ClientSize = new System.Drawing.Size(332, 380);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);

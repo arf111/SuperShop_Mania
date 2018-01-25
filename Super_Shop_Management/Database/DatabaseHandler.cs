@@ -19,7 +19,7 @@ namespace Super_Shop_Management.Database
             this.database = "super_shop";
             this.server = "localhost";
             this.usr_id = "root";
-            this.password = "";
+            this.password = "d@rk1995";
             
             conn = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + usr_id + ";" + "PASSWORD=" + password + ";";
