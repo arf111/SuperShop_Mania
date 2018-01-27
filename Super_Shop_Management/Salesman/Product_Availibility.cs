@@ -29,9 +29,7 @@ namespace Super_Shop_Management
             db = new Database.DatabaseHandler();
             db.openConnection();
 
-
-
-            query = "SELECT p.P_Name, s.P_Quantity, b.Location, b.Phone from product as p inner join stores_in as s on p.P_ID = s.P_ID inner join branch as b on b.Branch_ID = s.Branch_ID where p.P_Name = '"+search_av+"'";
+            query = "SELECT p.P_Name, s.P_Quantity, b.Location, b.Phone from product as p inner join stores_in as s on p.P_ID = s.P_ID inner join branch as b on b.Branch_ID = s.Branch_ID where p.P_Name LIKE '"+search_av+"%'";
 
             try
             {

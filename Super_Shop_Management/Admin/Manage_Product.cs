@@ -84,10 +84,8 @@ namespace Super_Shop_Management
         {
             try
             {
-                prod_name = up_name.Text;
-
-                dbAdmin.deleteprod(prod_name);
-
+                dbAdmin.deleteprod(s_ID);
+                
                 viewDetails();
             }
             catch(Exception ex)
@@ -139,6 +137,12 @@ namespace Super_Shop_Management
 
         private void viewDetails()
         {
+            up_product.Text = null;
+            up_name.Text = null;
+            up_price.Text = null;
+            warehouse_Price.Text = null;
+            wareHouse_Inventory.Text = null;
+
             db.openConnection();
 
             query = "SELECT w.S_Date as Supply_Date, p.P_Name as Product_Name,p.Selling_Price,w.P_Quantity as Quantity, w.Price as Buying_Price,C_Name as Category " +

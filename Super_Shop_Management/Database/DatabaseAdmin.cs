@@ -91,7 +91,7 @@ namespace Super_Shop_Management.Database
         {
             db.openConnection();
 
-            query = "DELETE FROM product WHERE P_Name='" + p_name + "'";
+            query = "DELETE FROM warehouse WHERE S_ID='" + p_name + "'";
             try
             {
                 MySqlCommand cmd = new MySqlCommand(query, db.getmyConn());

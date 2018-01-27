@@ -16,6 +16,7 @@ namespace Super_Shop_Management
         private Database.DatabaseHandler db;
         private String query;
         String cat_name = "";
+        private String fromDate, toDate;
 
         public Top_Selling()
         {
@@ -62,12 +63,16 @@ namespace Super_Shop_Management
         private void top_sell_search_Click(object sender, EventArgs e)
         {
             cat_name = top_pro_cat.SelectedItem.ToString();
+            fromDate = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            toDate = dateTimePicker2.Value.ToString("yyyy-MM-dd");
 
             db = new Database.DatabaseHandler();
 
             db.openConnection();
 
-            query = "SELECT p.P_Name FROM product as p INNER JOIN transaction as t on t.P_ID = p.P_ID INNER JOIN category as c on c.C_ID = p.C_ID WHERE c.C_Name = '" + cat_name + "' GROUP BY p.P_ID ORDER BY sum(t.Quantity) DESC";
+            query = "SELECT p.P_Name FROM product as p INNER JOIN transaction as t on t.P_ID = p.P_ID INNER JOIN category as c on c.C_ID = p.C_ID"+
+                " WHERE t.Date between '" + fromDate + "' AND '" + toDate +"' "+
+                "AND c.C_Name = '" + cat_name + "' GROUP BY p.P_ID ORDER BY sum(t.Quantity) DESC";
 
             try
             {
@@ -82,6 +87,7 @@ namespace Super_Shop_Management
                 myAdapter.Fill(dt);
 
                 topSellGridView.DataSource = dt;
+                topSellGridView.AutoResizeColumns();
 
             }
             catch (Exception ex)
