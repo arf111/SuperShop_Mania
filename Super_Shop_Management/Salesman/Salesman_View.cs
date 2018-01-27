@@ -14,13 +14,7 @@ namespace Super_Shop_Management
     public partial class Salesman_View : Form
     {
         private int n = 0;
-        /*private string[] T_ID = new string[80];
-        private string[] P_ID = new string[80];
-        private string[] Quantity = new string[80];
-        private string[] Total_Price = new string[80];
-        private string[] Date = new string[80];
-        */
-        private int m_ID = 1;
+        private int m_ID = 0;
         private Database.DatabaseHandler db;
         private String query;
         private int flag = 0;
@@ -131,13 +125,12 @@ namespace Super_Shop_Management
 
         private void transactionSave_Click(object sender, EventArgs e)
         {
-
             db = new Database.DatabaseHandler();
             db.openConnection();
 
             String dates = dateTimePicker1.Value.ToString("yyyy-MM-dd");
-            //DateTime date = DateTime.ParseExact(dates, "yyyy-MM-dd", null);
-            for (int i = 0; i < salesman_gridview.RowCount-1; i++)
+
+            for (int i = 0; i < salesman_gridview.RowCount - 1; i++)
             {
                 string P_ID = salesman_gridview.Rows[i].Cells[0].Value.ToString();
                 string Quantity = salesman_gridview.Rows[i].Cells[3].Value.ToString();
@@ -154,13 +147,21 @@ namespace Super_Shop_Management
                     total_Cost = total_Cost - (total_Cost * 0.2);
                 if (m_ID == 4)
                     total_Cost = total_Cost - (total_Cost * 0.25);
-                Random rnd = new Random();
-                int t_id = rnd.Next(1000);
-            
-                    query = "INSERT INTO transaction(T_ID ,P_ID , Quantity , Total_Price , Date) VALUES('" +
-                            t_id + "','" + (P_ID) + "','" + (Quantity) +
-                                       "','" + total_Cost + "','" + dates + "')";
-              
+                
+                if (i == 0)
+                {
+                    query = "INSERT INTO transaction(P_ID , Quantity , Total_Price , Date) VALUES('"
+                            + (P_ID) + "','" + (Quantity) +
+                            "','" + total_Cost + "','" + dates + "')";
+                }
+                else
+                {
+                    query = "INSERT INTO transaction " +
+                            "SELECT transaction.T_ID, " +
+                            "'"+(P_ID)+"','"+(Quantity)+"','"+total_Cost+"','"+dates+"' " +
+                            "FROM transaction ORDER BY transaction.T_ID DESC LIMIT 1";
+                }
+
                 try
                 {
                     MySqlCommand cmd = new MySqlCommand(query, db.getmyConn());
@@ -174,6 +175,8 @@ namespace Super_Shop_Management
 
 
             }
+            MessageBox.Show("Saved");
+
             db.closeConnection();
         }
 
