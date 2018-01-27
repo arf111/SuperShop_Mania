@@ -154,9 +154,10 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(387, 114);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(8);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(348, 30);
             this.dateTimePicker1.TabIndex = 22;

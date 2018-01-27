@@ -13,6 +13,13 @@ namespace Super_Shop_Management
 {
     public partial class Salesman_View : Form
     {
+        private int n = 0;
+        /*private string[] T_ID = new string[80];
+        private string[] P_ID = new string[80];
+        private string[] Quantity = new string[80];
+        private string[] Total_Price = new string[80];
+        private string[] Date = new string[80];
+        */
         private int m_ID = 1;
         private Database.DatabaseHandler db;
         private String query;
@@ -40,6 +47,8 @@ namespace Super_Shop_Management
 
         private void transactionAdd_Click(object sender, EventArgs e)
         {
+            n++;
+
             int quantity = Convert.ToInt32(salesman_quantity.Text);
 
 
@@ -86,15 +95,17 @@ namespace Super_Shop_Management
             db.closeConnection();
             if (flag == 0)
             {
+                salesman_gridview.Columns.Add("Product Barcode", "Product Barcode");
                 salesman_gridview.Columns.Add("Product Name ", "Product Name ");
-                salesman_gridview.Columns.Add("Price ", "Price_Per_Unit");
-                salesman_gridview.Columns.Add("Quantity ", "Quantity");
+                salesman_gridview.Columns.Add("Price", "Price");
+                salesman_gridview.Columns.Add("Quantity", "Quantity");
                 flag = 1;
             }
-            salesman_gridview.Rows.Add(new object[] { p_Name, price, quantity });
+
             q = Convert.ToInt32(salesman_quantity.Text);
             total_Cost = total_Cost + (double)(p * q);
-
+            price = p * q;
+            salesman_gridview.Rows.Add(new object[] { id, p_Name, price, quantity });
         }
 
         private void member_bttn_Click(object sender, EventArgs e)
@@ -120,24 +131,50 @@ namespace Super_Shop_Management
 
         private void transactionSave_Click(object sender, EventArgs e)
         {
+
             db = new Database.DatabaseHandler();
             db.openConnection();
 
-            //query = "INSERT INTO customer(C_Name,Email,M_ID) VALUES('" + customer_Fname.Text + "','" + customer_Email.Text + "'," + num + ")";
+            String dates = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            //DateTime date = DateTime.ParseExact(dates, "yyyy-MM-dd", null);
+            for (int i = 0; i < salesman_gridview.RowCount-1; i++)
+            {
+                string P_ID = salesman_gridview.Rows[i].Cells[0].Value.ToString();
+                string Quantity = salesman_gridview.Rows[i].Cells[3].Value.ToString();
+                string Total_Price = salesman_gridview.Rows[i].Cells[2].Value.ToString();
+
+                //for (int i = 0; i < salesman_gridview.RowCount; i++)
+
+                double total_Cost = Convert.ToDouble(Total_Price);
+                if (m_ID == 1)
+                    total_Cost = total_Cost - (total_Cost * 0.05);
+                if (m_ID == 2)
+                    total_Cost = total_Cost - (total_Cost * 0.1);
+                if (m_ID == 3)
+                    total_Cost = total_Cost - (total_Cost * 0.2);
+                if (m_ID == 4)
+                    total_Cost = total_Cost - (total_Cost * 0.25);
+                Random rnd = new Random();
+                int t_id = rnd.Next(1000);
             
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand(query, db.getmyConn());
-                cmd.ExecuteNonQuery();
+                    query = "INSERT INTO transaction(T_ID ,P_ID , Quantity , Total_Price , Date) VALUES('" +
+                            t_id + "','" + (P_ID) + "','" + (Quantity) +
+                                       "','" + total_Cost + "','" + dates + "')";
+              
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, db.getmyConn());
+                    cmd.ExecuteNonQuery();
+
+                }
+                catch (Exception ev)
+                {
+                    MessageBox.Show(ev.ToString());
+                }
+
 
             }
-            catch (Exception ev)
-            {
-                MessageBox.Show(ev.ToString());
-            }
-
             db.closeConnection();
-
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
