@@ -14,7 +14,7 @@ namespace Super_Shop_Management
     public partial class Salesman_View : Form
     {
         private int n = 0;
-        private int m_ID = 0;
+        private int m_ID = 0, id = 0;
         private Database.DatabaseHandler db;
         private String query;
         private int flag = 0;
@@ -33,8 +33,9 @@ namespace Super_Shop_Management
             this.Close();
         }
 
-        public void set_m_ID(int m_ID)
+        public void set_m_ID(int id, int m_ID)
         {
+            this.id = id;
             this.m_ID = m_ID;
         }
 
@@ -147,7 +148,7 @@ namespace Super_Shop_Management
                     total_Cost = total_Cost - (total_Cost * 0.2);
                 if (m_ID == 4)
                     total_Cost = total_Cost - (total_Cost * 0.25);
-                
+
                 if (i == 0)
                 {
                     query = "INSERT INTO transaction(P_ID , Quantity , Total_Price , Date) VALUES('"
@@ -158,7 +159,7 @@ namespace Super_Shop_Management
                 {
                     query = "INSERT INTO transaction " +
                             "SELECT transaction.T_ID, " +
-                            "'"+(P_ID)+"','"+(Quantity)+"','"+total_Cost+"','"+dates+"' " +
+                            "'" + (P_ID) + "','" + (Quantity) + "','" + total_Cost + "','" + dates + "' " +
                             "FROM transaction ORDER BY transaction.T_ID DESC LIMIT 1";
                 }
 
@@ -174,6 +175,24 @@ namespace Super_Shop_Management
                 }
 
 
+            }
+
+            if (id != 0)
+            {
+                try
+                {
+                    query = "INSERT INTO proceed " +
+                            "SELECT transaction.T_ID, " +
+                            "'" + id + "'"+
+                            " FROM transaction ORDER BY transaction.T_ID DESC LIMIT 1";
+
+                    MySqlCommand cmd = new MySqlCommand(query, db.getmyConn());
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
             MessageBox.Show("Saved");
 

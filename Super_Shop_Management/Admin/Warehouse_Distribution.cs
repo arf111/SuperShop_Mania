@@ -63,12 +63,11 @@ namespace Super_Shop_Management.Admin
         {
             db.openConnection();
 
-            prod_name = product_name.Text;
-            branch_Name = branch_name.Text;
             prod_quantity = product_quantity.Text;
 
-            query = "UPDATE stores_in SET P_Quantity = "+prod_quantity+" WHERE Branch_ID = (Select Branch_ID from branch where location = '"+branch_Name+"')";
-
+            query = "UPDATE stores_in SET P_Quantity = "+prod_quantity+" WHERE Branch_ID = (Select Branch_ID from branch where location = '"
+                    +branch_Name+"' AND P_ID = (SELECT P_ID FROM product WHERE P_Name = '"+prod_name+"') )";
+            
             try
             {
                 MySqlCommand cmd = new MySqlCommand(query, db.getmyConn());
@@ -112,6 +111,12 @@ namespace Super_Shop_Management.Admin
                 MessageBox.Show(ex.ToString());
             }
             db.closeConnection();
+        }
+
+        private void sales_distributeView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            prod_name = sales_distributeView.Rows[e.RowIndex].Cells[0].Value.ToString();
+            branch_Name = sales_distributeView.Rows[e.RowIndex].Cells[2].Value.ToString();
         }
 
         private void view_bttn_Click(object sender, EventArgs e)

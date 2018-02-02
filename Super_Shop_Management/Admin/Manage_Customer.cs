@@ -26,6 +26,7 @@ namespace Super_Shop_Management
             InitializeComponent();
         }
 
+        
 
         private void view_customer_details()
         {
@@ -85,6 +86,7 @@ namespace Super_Shop_Management
                 MySqlCommand cmd = new MySqlCommand(query, db.getmyConn());
                 cmd.ExecuteNonQuery();
 
+                MessageBox.Show("Inserted");
                 view_customer_details();
                 
             }
@@ -132,11 +134,13 @@ namespace Super_Shop_Management
 
 
             query = "UPDATE customer SET C_Name='" + customer_Fname.Text + "'" +
-                " , Email = '" + customer_Email.Text + "' , M_ID =" + num + " where C_ID =" + id;
+                " , Email = '" + customer_Email.Text + "' , M_ID =" + num + " where Email ='" + email+"'";
             try
             {
                 MySqlCommand cmd = new MySqlCommand(query, db.getmyConn());
                 cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Updated");
 
                 view_customer_details();
             }
@@ -165,6 +169,7 @@ namespace Super_Shop_Management
                 MySqlCommand cmd = new MySqlCommand(query, db.getmyConn());
                 cmd.ExecuteNonQuery();
 
+                MessageBox.Show("Deleted");
                 view_customer_details();
             }
             catch (Exception ev)

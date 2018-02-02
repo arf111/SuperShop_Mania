@@ -72,7 +72,7 @@ namespace Super_Shop_Management
 
             query = "SELECT p.P_Name FROM product as p INNER JOIN transaction as t on t.P_ID = p.P_ID INNER JOIN category as c on c.C_ID = p.C_ID"+
                 " WHERE t.Date between '" + fromDate + "' AND '" + toDate +"' "+
-                "AND c.C_Name = '" + cat_name + "' GROUP BY p.P_ID ORDER BY sum(t.Quantity) DESC";
+                "AND c.C_Name = '" + cat_name + "' GROUP BY p.P_Name ORDER BY sum(t.Quantity) DESC";
 
             try
             {

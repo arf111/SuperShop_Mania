@@ -41,7 +41,6 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel2 = new System.Windows.Forms.Panel();
             this.member_bttn = new System.Windows.Forms.Button();
-            this.transactionDelete = new System.Windows.Forms.Button();
             this.transactionSave = new System.Windows.Forms.Button();
             this.transactionPrint = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -166,7 +165,6 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
             this.panel2.Controls.Add(this.member_bttn);
-            this.panel2.Controls.Add(this.transactionDelete);
             this.panel2.Controls.Add(this.transactionSave);
             this.panel2.Controls.Add(this.transactionPrint);
             this.panel2.Controls.Add(this.transactionAdd);
@@ -190,20 +188,6 @@
             this.member_bttn.Text = "Member";
             this.member_bttn.UseVisualStyleBackColor = false;
             this.member_bttn.Click += new System.EventHandler(this.member_bttn_Click);
-            // 
-            // transactionDelete
-            // 
-            this.transactionDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
-            this.transactionDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.transactionDelete.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transactionDelete.ForeColor = System.Drawing.Color.White;
-            this.transactionDelete.Location = new System.Drawing.Point(20, 245);
-            this.transactionDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.transactionDelete.Name = "transactionDelete";
-            this.transactionDelete.Size = new System.Drawing.Size(198, 60);
-            this.transactionDelete.TabIndex = 17;
-            this.transactionDelete.Text = "Delete";
-            this.transactionDelete.UseVisualStyleBackColor = false;
             // 
             // transactionSave
             // 
@@ -325,7 +309,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button transactionDelete;
         private System.Windows.Forms.Button transactionSave;
         private System.Windows.Forms.Button transactionPrint;
         private System.Windows.Forms.Panel panel1;

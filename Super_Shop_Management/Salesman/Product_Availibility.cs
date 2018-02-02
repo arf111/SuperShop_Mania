@@ -44,6 +44,7 @@ namespace Super_Shop_Management
                 myAdapter.Fill(dt);
 
                 productAvailGridView.DataSource = dt;
+                productAvailGridView.AutoResizeColumns();
 
             }
             catch (Exception ex)

@@ -57,7 +57,8 @@ namespace Super_Shop_Management.Salesman
             }
             db.closeConnection();
 
-            sv.set_m_ID(mid);
+            sv.set_m_ID(id,mid);
+            
             this.Close();
             sv.Visible = true;
 

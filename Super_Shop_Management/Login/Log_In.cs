@@ -46,18 +46,33 @@ namespace Super_Shop_Management
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            if(admin_rbtn.Checked == true)
+            if (admin_rbtn.Checked == true)
             {
-                this.Hide();
+                if (username.Text.ToString() == admin_name && password.Text.ToString() == admin_passwd)
+                {
+                    new Admin_View().Show();
 
-                new Admin_View().Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid input");
+                }
+                
             }
 
             if (salesman_rbtn.Checked == true)
             {
-                this.Hide();
+                if (username.Text.ToString() == sales_name && password.Text.ToString() == sales_passwd)
+                {
+                    new Sales_View().Show();
 
-                new Sales_View().Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid input");
+                }
             }
 
         }
