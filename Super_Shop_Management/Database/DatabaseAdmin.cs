@@ -104,11 +104,11 @@ namespace Super_Shop_Management.Database
             }
             db.closeConnection();
         }
-        public void updateprod(String p_name, String category, String selling_price)
+        public void updateprod(String p_name1, String p_name2, String category, String selling_price)
         {
             db.openConnection();
 
-            query = "SELECT P_ID FROM product where P_Name='" + p_name + "'";
+            query = "SELECT P_ID FROM product where P_Name='" + p_name1 + "'";
 
             try
             {
@@ -116,7 +116,7 @@ namespace Super_Shop_Management.Database
 
                 p_id = cmd.ExecuteScalar().ToString();
 
-                query = "UPDATE product as p SET p.P_Name = '" + p_name + "', p.Selling_Price = '" + selling_price + "', p.C_ID = '" + category +
+                query = "UPDATE product as p SET p.P_Name = '" + p_name2 + "', p.Selling_Price = '" + selling_price + "', p.C_ID = '" + category +
                 "' WHERE p.P_ID = '" + p_id + "'";
 
                 MySqlCommand cmd1 = new MySqlCommand(query, db.getmyConn());

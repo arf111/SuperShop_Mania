@@ -36,7 +36,6 @@ namespace Super_Shop_Management
         private void pro_update_Click(object sender, EventArgs e)
         {
             catg = up_product.SelectedItem.ToString();
-            prod_name = up_name.Text;
             selling_price = up_price.Text;
             s_date = dateTimePicker1.Value.ToString("yyyy-MM-dd");
             buy_price = warehouse_Price.Text;
@@ -52,12 +51,12 @@ namespace Super_Shop_Management
             }
             try
             {
-                dbAdmin.updateprod(prod_name, catg, selling_price);
+                dbAdmin.updateprod(prod_name, up_name.Text.ToString(), catg, selling_price);
                 dbAdmin.warehouseUpdate(s_ID, s_date, quantity, buy_price);
 
                 viewDetails();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
@@ -70,6 +69,7 @@ namespace Super_Shop_Management
                 dateTimePicker1.Value = Convert.ToDateTime(productGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
                 s_ID = getS_ID(e.RowIndex);
                 up_name.Text = productGridView.Rows[e.RowIndex].Cells[1].Value.ToString();//1
+                prod_name = up_name.Text;
                 up_price.Text = productGridView.Rows[e.RowIndex].Cells[2].Value.ToString();//2
                 warehouse_Price.Text = productGridView.Rows[e.RowIndex].Cells[4].Value.ToString();//4
                 wareHouse_Inventory.Text = productGridView.Rows[e.RowIndex].Cells[3].Value.ToString();//3
