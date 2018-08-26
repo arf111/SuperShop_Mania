@@ -20,9 +20,25 @@ A C# project based on super shop.
 
 3.	Database:  MySQL
 
-## ERD of the project
+## Entity Relationship Diagram
 
 ![SuperShop_Mania](Images/ERD.jpg)
+
+### Entity Sets
+
+•	Customer
+
+•	Branch
+
+•	Membership
+
+•	Product
+
+•	Transaction
+
+•	Warehouse
+
+•	Category
 
 ## Data Flow Diagram
 
