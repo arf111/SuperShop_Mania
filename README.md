@@ -1,5 +1,5 @@
 # SuperShop_Mania
 
-##ERD
+The ERD of the project
 
 ![SuperShop_Mania](Images/ERD.jpg)
