@@ -15,7 +15,9 @@ A C# project based on super shop.
 ## Platforms
 
 1	Programming Language :  C#
+
 2	IDE :  Visual Studio
+
 3	Database:  MySQL
 
 ## ERD of the project
