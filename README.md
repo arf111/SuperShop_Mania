@@ -1,4 +1,5 @@
 # SuperShop_Mania
+A C# project based on super shop.
 
 # Features:
 
