@@ -62,6 +62,6 @@ Level 1 diagram
 
 ## Use Case
 
-![SuperShop_Mania](Images/"Use Case.jpg")
+![SuperShop_Mania](Images/Use_Case.jpg)
 
 
