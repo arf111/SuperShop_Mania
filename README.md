@@ -30,6 +30,10 @@ Context Diagram
 
 ![SuperShop_Mania](Images/Context_Diagram.jpg)
 
+Description:
+From context diagram, we can see that we have three entities in our system. The entities are customer, local store, and warehouse. Customer can purchase item, get information of items, and can get membership. Local store will fetch items from warehouse and warehouse will provide those items.
+
+
 Level 0 diagram
         
 ![SuperShop_Mania](Images/Level_0_Diagram.jpg)
