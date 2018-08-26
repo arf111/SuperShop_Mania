@@ -112,5 +112,9 @@ Local store will be able to request for products and will be useful in creating 
 3. Warehouse:
 Warehouse will provide necessary products to local stores and will be useful in creating sales report. 
 
+## References
+
+1.	System Analysis Design 8ED Kendall.
+2.	Software Engineering 7th ED Pressman.
 
 
