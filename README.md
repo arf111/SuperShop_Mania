@@ -1,7 +1,7 @@
 # SuperShop_Mania
 A C# project based on super shop.
 
-# Features:
+## Features:
 
 1.	Customer buys product, local store sells product, and therefore transaction happens.
 2.	Customer can be approved for membership.
