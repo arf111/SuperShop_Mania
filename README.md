@@ -14,11 +14,11 @@ A C# project based on super shop.
 
 ## Platforms
 
-1	Programming Language :  C#
+1.	Programming Language :  C#
 
-2	IDE :  Visual Studio
+2.	IDE :  Visual Studio
 
-3	Database:  MySQL
+3.	Database:  MySQL
 
 ## ERD of the project
 
@@ -93,13 +93,13 @@ Customer will provide category and will get the top selling products information
 
 ### Actors
 
-1  Customer: 
+1. Customer: 
 Customers will be able to buy products, view top-selling products and get membership, search item information and view product availability on different stores.
 
-2  Local Store:
+2. Local Store:
 Local store will be able to request for products and will be useful in creating sales report.
 
-3  Warehouse:
+3. Warehouse:
 Warehouse will provide necessary products to local stores and will be useful in creating sales report. 
 
 
