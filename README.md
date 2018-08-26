@@ -26,6 +26,8 @@ A C# project based on super shop.
 
 Level 0 diagram
 
+      SuperShop_Mania/Images/Level 0 Diagram.jpg
+        
 ![SuperShop_Mania](Images/Level 0 Diagram.jpg)
 
 Level 1 diagram
