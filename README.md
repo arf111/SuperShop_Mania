@@ -27,17 +27,11 @@ A C# project based on super shop.
 ### Entity Sets
 
 •	Customer
-
 •	Branch
-
 •	Membership
-
 •	Product
-
 •	Transaction
-
 •	Warehouse
-
 •	Category
 
 ## Data Flow Diagram
