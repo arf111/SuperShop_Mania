@@ -24,41 +24,45 @@ A C# project based on super shop.
 
 ## Data Flow Diagram
 
+Context Diagram
+
+![SuperShop_Mania](Images/Context_Diagram.jpg)
+
 Level 0 diagram
         
-![SuperShop_Mania](Images/Level 0 Diagram.jpg)
+![SuperShop_Mania](Images/Level_0_Diagram.jpg)
 
 Level 1 diagram
 
-![SuperShop_Mania](Images/Level 1 Diagram.jpg)
+![SuperShop_Mania](Images/Level_1_Diagram.jpg)
 
 Level 1 diagram
 
-![SuperShop_Mania](Images/Level 1 Diagram_2.jpg)
+![SuperShop_Mania](Images/Level_1_Diagram_2.jpg)
 
 Level 1 diagram
 
-![SuperShop_Mania](Images/Level 1 Diagram_3.jpg)
+![SuperShop_Mania](Images/Level_1_Diagram_3.jpg)
 
 Level 1 diagram
 
-![SuperShop_Mania](Images/Level 1 Diagram_4.jpg)
+![SuperShop_Mania](Images/Level_1_Diagram_4.jpg)
 
 Level 1 diagram
 
-![SuperShop_Mania](Images/Level 1 Diagram_5.jpg)
+![SuperShop_Mania](Images/Level_1_Diagram_5.jpg)
 
 Level 1 diagram
 
-![SuperShop_Mania](Images/Level 1 Diagram_6.jpg)
+![SuperShop_Mania](Images/Level_1_Diagram_6.jpg)
 
 Level 1 diagram
 
-![SuperShop_Mania](Images/Level 1 Diagram_7.jpg)
+![SuperShop_Mania](Images/Level_1_Diagram_7.jpg)
 
 Level 1 diagram
 
-![SuperShop_Mania](Images/Level 1 Diagram_8.jpg)
+![SuperShop_Mania](Images/Level_1_Diagram_8.jpg)
 
 ## Use Case
 
