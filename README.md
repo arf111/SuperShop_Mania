@@ -25,8 +25,6 @@ A C# project based on super shop.
 ## Data Flow Diagram
 
 Level 0 diagram
-
-      SuperShop_Mania/Images/Level 0 Diagram.jpg
         
 ![SuperShop_Mania](Images/Level 0 Diagram.jpg)
 
@@ -64,6 +62,6 @@ Level 1 diagram
 
 ## Use Case
 
-![SuperShop_Mania](Images/Use Case.jpg)
+![SuperShop_Mania](Images/"Use Case.jpg")
 
 
