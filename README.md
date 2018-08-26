@@ -26,7 +26,7 @@ A C# project based on super shop.
 
 ## Data Flow Diagram
 
-Context Diagram
+### Context Diagram
 
 ![SuperShop_Mania](Images/Context_Diagram.jpg)
 
@@ -34,39 +34,39 @@ Description:
 From context diagram, we can see that we have three entities in our system. The entities are customer, local store, and warehouse. Customer can purchase item, get information of items, and can get membership. Local store will fetch items from warehouse and warehouse will provide those items.
 
 
-Level 0 diagram
+### Level 0 diagram
         
 ![SuperShop_Mania](Images/Level_0_Diagram.jpg)
 
-Level 1 diagram
+### Level 1 diagram
 
 ![SuperShop_Mania](Images/Level_1_Diagram.jpg)
 
-Level 1 diagram
+### Level 1 diagram
 
 ![SuperShop_Mania](Images/Level_1_Diagram_2.jpg)
 
-Level 1 diagram
+### Level 1 diagram
 
 ![SuperShop_Mania](Images/Level_1_Diagram_3.jpg)
 
-Level 1 diagram
+### Level 1 diagram
 
 ![SuperShop_Mania](Images/Level_1_Diagram_4.jpg)
 
-Level 1 diagram
+### Level 1 diagram
 
 ![SuperShop_Mania](Images/Level_1_Diagram_5.jpg)
 
-Level 1 diagram
+### Level 1 diagram
 
 ![SuperShop_Mania](Images/Level_1_Diagram_6.jpg)
 
-Level 1 diagram
+### Level 1 diagram
 
 ![SuperShop_Mania](Images/Level_1_Diagram_7.jpg)
 
-Level 1 diagram
+### Level 1 diagram
 
 ![SuperShop_Mania](Images/Level_1_Diagram_8.jpg)
 
