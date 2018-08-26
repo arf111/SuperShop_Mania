@@ -13,6 +13,6 @@ A C# project based on super shop.
 8.	Customer can see top selling products of specific category
 
 
-The ERD of the project
+## ERD of the project
 
 ![SuperShop_Mania](Images/ERD.jpg)
